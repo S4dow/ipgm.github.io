@@ -1,0 +1,105 @@
+
+<!---->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>IPGM</title>
+    <link rel="icon" type="image/png" href="../../static/style_index/img/logos/ipgm.png" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../../use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/style_admin/css/style.css" rel="stylesheet">
+    <!--Movil-->
+    <link href="../../static/style_movil/style_login.css" rel="stylesheet">
+    <style>
+        input:focus {
+            border: 1px solid #289672 !important;
+        }
+        
+        button:hover {
+            background-color: #33bb8e !important;
+        }
+    </style>
+     
+</head>
+
+<body>
+    
+<!--Login-->
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg" style="background-color: #fdfdfd;">
+            <div class="row flex-grow">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <div class="auth-form-transparent text-left p-3">
+                        <div class="brand-logo text-center">
+                            <a href="../../index.html" style="cursor: pointer;">
+                                <img src="../../static/style_index/img/logos/ipgm.png" alt="logo" class="img-fluid" style="width: 200px;">
+                            </a>
+                        </div>
+                        <h4 class="text-black text-center">Bienvenido!</h4>
+                        
+                        <form method="POST" action="https://www.ipgmservicios.com/auth/proceso/" enctype="multipart/form-data" class="pt-2">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="dC2R0DtTaPnb9e8zCxXZPORUlvePnOxyIZvvJuEVM1QuHG4kzH3R7PvmMcjTFfmq">
+                            <div class="form-group">
+                                <input type="text" style="font-size: 16px;" class="form-control input_login form-control-lg" required name="username" placeholder="Usuario">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" style="font-size: 16px;" class="form-control input_login input_pass form-control-lg" required name="password" placeholder="Contraseña">
+                                    <div class="input-group-prepend" id="show_hide_password" style="cursor: pointer;">
+                                        <span class="input-group-text"><i class="fas fa-eye-slash"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-block btn-lg font-weight-medium auth-form-btn button_login" type="submit" style="background-color: #2daa80;color: white;"><h5 style="margin-top: -1px;font-size: 18px;">Iniciar sesión <i class="fas fa-chevron-circle-right"></i></h5></button>
+                            </div>
+                            <button id="boton1111">hombreeeee</button>
+                            <div class="text-left mt-4 font-weight-light" style="font-size: 16px;">
+                                No tiene una cuenta? <a href="../registro/index.html" class="auth-link text-black font-weight-bold">Solicitar cuenta</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 login-half-bg d-flex flex-row" style="background-image: url('../../static/style_index/img/index/monitoreo88.jpg')">
+                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2021 IPGM - Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+
+
+<!---->
+
+
+    <script src="../../../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#show_hide_password").on('click', function(event) {
+                event.preventDefault();
+                console.log('diste clic')
+                if ($('.input_pass').attr("type") == "text") {
+                    $('.input_pass').attr('type', 'password');
+                    $('#show_hide_password i').addClass("fa-eye-slash");
+                    $('#show_hide_password i').removeClass("fa-eye");
+                } else if ($('.input_pass').attr("type") == "password") {
+                    $('.input_pass').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("fa-eye-slash");
+                    $('#show_hide_password i').addClass("fa-eye");
+                }
+            });
+        })
+    </script>
+</body>
+
+
+
+</html>
